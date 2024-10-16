@@ -43,10 +43,10 @@ const NavItem: React.FC<NavItemProps> = ({ label, to, icon, onClick }) => {
     </Flex>
   );
 };
-
+// TODO:  개인 정보 수정 할 수 있도록 기능 추가
 const SideMenu: React.FC = () => {
   const [isLogoutModalOpen, setLogoutModalOpen] = useState(false);
-
+  // const [, set] = useState();
   const openLogoutModal = () => setLogoutModalOpen(true);
   const closeLogoutModal = () => setLogoutModalOpen(false);
 
@@ -69,18 +69,19 @@ const SideMenu: React.FC = () => {
         </Link>
       </Flex>
       <NavItem label="대시보드" to="/" icon={gridImage} />
-      <NavItem label="방문자 수" to="/visitors" icon={visitImage} />
-      <NavItem label="게임 통계" to="/gamestats" icon={gameImage} />
-      <NavItem label="유저 관리" to="/usersetting" icon={userImage} />
-      <NavItem label="관리자 관리" to="/adminsetting" icon={adminImage} />
-      <NavItem label="주제 관리" to="/topicsetting" icon={editImage} />
+      {/*<NavItem label="관리자 관리" to="/adminsetting" icon={adminImage} />*/}
+      <NavItem label="콘텐츠 관리" to="/contents"  />
       <NavItem
         label="로그아웃"
         to="/logout"
         icon={logoutImage}
         onClick={openLogoutModal}
       />
-
+      <NavItem
+        label="마이페이지"
+        to="/mypage"
+        // onClick={openLogoutModal}
+      />
       <LogoutModal isOpen={isLogoutModalOpen} onClose={closeLogoutModal} />
     </Box>
   );

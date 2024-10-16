@@ -24,13 +24,14 @@ function App() {
     <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Layout />}>
+          
           <Route path="/" element={<PrivateRoute />}>
             <Route index element={<Dashboard />} />
             <Route path="/visitors" element={<Visitor />} />
             <Route path="/gamestats" element={<GameStat />} />
             <Route path="/usersetting" element={<UserSetting />} />
             <Route path="/adminsetting" element={<AdminSetting />} />
-            <Route path="/topicsetting" element={<TopicSetting />} />
+            <Route path="/topicsetting" element={< />} />
           </Route>
         </Route>
 
@@ -42,3 +43,5 @@ function App() {
 }
 
 export default App;
+
+// 
